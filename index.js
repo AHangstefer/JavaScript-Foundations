@@ -58,6 +58,29 @@ let monthlyRate = (numerator/denominator)*principle;
 If your name is `Oscar` mortgageCalculator() should return "Oscar, your monthly rate is 1073.64"
 */
 
+function mortgageRateCalculator(principle, irate, years){
+  
+    //let principle= 200000; 
+    //let irate=0.05;
+    //let years= 30;
+    
+    let name='anna';
+    
+    let monthlyInterestRate= irate/12;
+    let periods = years*12
+    
+    let newMr= monthlyInterestRate+1;
+    
+    
+    let numerator= Math.pow(newMr, periods)*monthlyInterestRate;
+    let denominator=Math.pow(newMr, periods)-1;
+    
+    let monthlyRate = (numerator/denominator)*principle;
+    
+    return name + " this is your credit score " + monthlyRate.toFixed(2);
+    
+    }
+    mortgageRateCalculator(200000, 0.05, 30);
 
 
 
@@ -69,6 +92,29 @@ If your name is `Oscar` mortgageCalculator() should return "Oscar, your monthly 
 For example,
 mortgageCalculator(2000000, 0.05, 30); <-- should return 1,073.64
 */
+function mortgageRateCalculator(principle, irate, years){
+  
+    //let principle= 200000; 
+    //let irate=0.05;
+    //let years= 30;
+    
+    let name='anna';
+    
+    let monthlyInterestRate= irate/12;
+    let periods = years*12
+    
+    let newMr= monthlyInterestRate+1;
+    
+    
+    let numerator= Math.pow(newMr, periods)*monthlyInterestRate;
+    let denominator=Math.pow(newMr, periods)-1;
+    
+    let monthlyRate = (numerator/denominator)*principle;
+    
+    return name + " this is your credit score " + monthlyRate.toFixed(2);
+    
+    }
+    mortgageRateCalculator(200000, 0.05, 30);
 
 
 
