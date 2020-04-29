@@ -212,7 +212,40 @@ For example, variableInterestRate(200000, 0.04, 30) should console.log:
 "{Name}, with an interest rate of 0.055, your monthly rate is $1136"
 "{Name}, with an interest rate of 0.06, your monthly rate is $1199"
 */
-
+function variableInterestRate(principle, irate, years){
+  
+    let name='anna';
+    
+    let monthlyInterestRate;
+    let periods;
+    let newMr;
+    let numerator;
+    let denominator;
+    let monthlyRate;
+    
+    let newRate= [irate-0.02, irate-0.015,irate -0.010, irate-0.005, irate, irate+0.005, irate+0.010, irate+0.015, irate+0.02];
+    
+    for (let i=0; i<=newRate.length-1; i++){
+       
+       monthlyInterestRate=newRate[i]/12;
+      
+       periods = years*12
+    
+    
+       newMr= monthlyInterestRate+1;
+    
+    
+       numerator= Math.pow(newMr, periods)*monthlyInterestRate;
+       denominator=Math.pow(newMr, periods)-1;
+    
+       monthlyRate = (numerator/denominator)*principle;
+    
+      console.log (name + ", with an interest rate of $" + newRate[i] +",your monthly rate is " + monthlyRate.toFixed(2));
+    
+    }
+    }
+    variableInterestRate(200000, 0.04, 30);
+    variableInterestRate(200000, 0.05, 30);
 
 
 
