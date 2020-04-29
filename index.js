@@ -77,7 +77,7 @@ function mortgageRateCalculator(principle, irate, years){
     
     let monthlyRate = (numerator/denominator)*principle;
     
-    return name + " this is your credit score " + monthlyRate.toFixed(2);
+    return name + " ,your monthly rate is " + monthlyRate.toFixed(2);
     
     }
     mortgageRateCalculator(200000, 0.05, 30);
@@ -111,7 +111,7 @@ function mortgageRateCalculator(principle, irate, years){
     
     let monthlyRate = (numerator/denominator)*principle;
     
-    return name + " this is your credit score " + monthlyRate.toFixed(2);
+    return name + " ,your monthly rate is " + monthlyRate.toFixed(2);
     
     }
     mortgageRateCalculator(200000, 0.05, 30);
@@ -122,13 +122,75 @@ function mortgageRateCalculator(principle, irate, years){
 
 // 🏡 Task 5: Conditionals
 /* Add another paramter to your function called credit score. This parameter will be a number 
-between 0 and 800 (a credit score).
+between 0 and 800 (a credit score).*/
 
-Then, add control flow within your function such that IF creditScore is above 740, interest rate 
+function mortgageRateCalculator(principle, irate, years, creditScore){
+  
+let name='anna';
+
+let monthlyInterestRate= irate/12;
+let periods = years*12
+
+let newMr= monthlyInterestRate+1;
+
+
+let numerator= Math.pow(newMr, periods)*monthlyInterestRate;
+let denominator=Math.pow(newMr, periods)-1;
+
+let monthlyRate = (numerator/denominator)*principle;
+
+
+return name + ", your monthly rate is " + monthlyRate.toFixed(2) + creditScore;
+
+}
+mortgageRateCalculator(200000, 0.05, 30, 720);
+
+
+
+
+
+/*Then, add control flow within your function such that IF creditScore is above 740, interest rate 
 drops by 0.5%, if credit score is below 660, interest rate increases by 0.5% and if credit score is anywhere
  between 660 and 740 interest rate doesn't change.
 */
 
+
+function mortgageRateCalculator(principle, irate, years, creditScore){
+  
+    let name='anna';
+    
+    let monthlyInterestRate= irate/12;
+    let periods = years*12
+    
+    let newMr= monthlyInterestRate+1;
+    
+    
+    let numerator= Math.pow(newMr, periods)*monthlyInterestRate;
+    let denominator=Math.pow(newMr, periods)-1;
+    
+    let monthlyRate = (numerator/denominator)*principle;
+    
+    
+    let newRate=0;
+    
+    if (creditScore >= 740){
+      let newRate=(irate - (irate* 0.005));
+    } 
+    else if (creditScore <=660){
+      let newRate=(irate + (irate* 0.005));
+    }
+    else{
+       let newRate= irate;
+    }
+    
+    
+    return name + ", your monthly rate is " + monthlyRate.toFixed(2) + newRate;
+    
+    }
+    mortgageRateCalculator(200000, 0.05, 30, 550);
+    
+    
+    
 
 
 
