@@ -139,6 +139,8 @@ let denominator=Math.pow(newMr, periods)-1;
 
 let monthlyRate = (numerator/denominator)*principle;
 
+var creditScore;
+
 
 return name + ", your monthly rate is " + monthlyRate.toFixed(2) + creditScore;
 
@@ -155,42 +157,41 @@ drops by 0.5%, if credit score is below 660, interest rate increases by 0.5% and
 */
 
 
+  
 function mortgageRateCalculator(principle, irate, years, creditScore){
   
     let name='anna';
-    
+        
     let monthlyInterestRate= irate/12;
     let periods = years*12
-    
+        
     let newMr= monthlyInterestRate+1;
-    
-    
+        
+        
     let numerator= Math.pow(newMr, periods)*monthlyInterestRate;
     let denominator=Math.pow(newMr, periods)-1;
-    
+        
     let monthlyRate = (numerator/denominator)*principle;
-    
-    
-    let newRate=0;
-    
+        
+        
+        
     if (creditScore >= 740){
-      let newRate=(irate - (irate* 0.005));
+      newRate=(monthlyRate - (monthlyRate* 0.005));
     } 
     else if (creditScore <=660){
-      let newRate=(irate + (irate* 0.005));
+      newRate=(monthlyRate + (monthlyRate* 0.005));
     }
     else{
-       let newRate= irate;
+      newRate= monthlyRate;
     }
-    
-    
-    return name + ", your monthly rate is " + monthlyRate.toFixed(2) + newRate;
-    
-    }
-    mortgageRateCalculator(200000, 0.05, 30, 550);
-    
-    
-    
+        
+        
+return name + ", your monthly rate is $" + monthlyRate.toFixed(2) +". Rate based on credit score= $"+ newRate.toFixed(2);
+        
+}
+mortgageRateCalculator(200000, 0.05, 30, 700);
+        
+        
 
 
 
